@@ -12,8 +12,7 @@ function onScroll() {
   activateMenuAtCurrentSection(contact);
 }
 
-// variaveis conts targetline, sectionTop, sectionHeight, sectionTopReachOrPassedTargetline, sectionEndsAt, sectionEndPassedTargetline,sectionBoundaries, sectionId, menuElement
-function activateMenuAtCurrentSection(section) {
+  function activateMenuAtCurrentSection(section) {
   const targetline = scrollY + innerHeight / 2;
 
   // Verificar se a seção passou.
@@ -24,10 +23,7 @@ function activateMenuAtCurrentSection(section) {
 
   // Informações do dado
   const sectionEndsAt = sectionTop + sectionHeight;
-  // console.log(
-  //   `O topo da seção chegou o passou da linha? ${sectionTopReachOrPassedTargetline}`
-  // );
-
+  
   // Verificar se a base está abaixo da linha alvo
   // Quais dados vou precisar?
 
