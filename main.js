@@ -1,10 +1,10 @@
-// Consertando erro
 window.addEventListener("scroll", onScroll);
 
 onScroll();
 
 function onScroll() {
   showNavOnScroll();
+  reveal()
   showArrowToTopButtonOnScroll();
   activateMenuAtCurrentSection(home);
   activateMenuAtCurrentSection(services);
@@ -12,7 +12,7 @@ function onScroll() {
   activateMenuAtCurrentSection(contact);
 }
 
-  function activateMenuAtCurrentSection(section) {
+function activateMenuAtCurrentSection(section) {
   const targetline = scrollY + innerHeight / 2;
 
   const sectionTop = section.offsetTop;
@@ -59,35 +59,38 @@ function closeMenu() {
   document.body.classList.remove("menu-expanded");
 }
 
-ScrollReveal({
-  origin: "top",
-  distance: "3rem",
-  duration: 700,
-}).reveal(`
- #home,
- #home
- img,
- #home
- .stats,
- footer,
-  header
- `);
+function reveal(){
+  ScrollReveal({
+    origin: "top",
+    distance: "3rem",
+    duration: 700,
+  }).reveal(`
+   #home,
+   #home
+   img,
+   #home
+   .stats,
+   footer,
+    header
+   `);
+  
+  ScrollReveal({
+    origin: "left",
+    distance: "3rem",
+    duration: 700,
+  }).reveal(`
+   #services
+    header,
+   #services
+   .card,
+   #about,
+   #about 
+   header,
+   #about 
+   .content,
+   #contact,
+   header,
+   .content
+   `);
+}
 
-ScrollReveal({
-  origin: "left",
-  distance: "3rem",
-  duration: 700,
-}).reveal(`
- #services
-  header,
- #services
- .card,
- #about,
- #about 
- header,
- #about 
- .content,
- #contact,
- header,
- .content
- `);
