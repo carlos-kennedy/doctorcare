@@ -1,7 +1,5 @@
 window.addEventListener("scroll", onScroll);
 
-onScroll();
-
 function onScroll() {
   showNavOnScroll();
   reveal()
@@ -11,6 +9,7 @@ function onScroll() {
   activateMenuAtCurrentSection(about);
   activateMenuAtCurrentSection(contact);
 }
+onScroll();
 
 function activateMenuAtCurrentSection(section) {
   const targetline = scrollY + innerHeight / 2;
