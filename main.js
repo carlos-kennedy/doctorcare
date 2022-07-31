@@ -1,15 +1,14 @@
 window.addEventListener("scroll", onScroll);
 
 function onScroll() {
-  showNavOnScroll();
-  reveal()
   showArrowToTopButtonOnScroll();
+  showNavOnScroll();
+
   activateMenuAtCurrentSection(home);
   activateMenuAtCurrentSection(services);
   activateMenuAtCurrentSection(about);
   activateMenuAtCurrentSection(contact);
 }
-onScroll();
 
 function activateMenuAtCurrentSection(section) {
   const targetline = scrollY + innerHeight / 2;
@@ -35,21 +34,22 @@ function activateMenuAtCurrentSection(section) {
   }
 }
 
-function showNavOnScroll() {
-  if (scrollY > 0) {
-    navigation.classList.add("scroll");
-  } else {
-    navigation.classList.remove("scroll");
-  }
-}
-
 function showArrowToTopButtonOnScroll() {
-  if (scrollY > 880) {
+  if (scrollY > 600) {
     arrowToTopButton.classList.add("show");
   } else {
     arrowToTopButton.classList.remove("show");
   }
 }
+
+function showNavOnScroll() {
+  if (scrollY > 0) {
+    nav.classList.add("scroll");
+  } else {
+    nav.classList.remove("scroll");
+  }
+}
+
 function openMenu() {
   document.body.classList.add("menu-expanded");
 }
@@ -58,7 +58,8 @@ function closeMenu() {
   document.body.classList.remove("menu-expanded");
 }
 
-function reveal(){
+reveal();
+function reveal() {
   ScrollReveal({
     origin: "top",
     distance: "3rem",
@@ -72,7 +73,7 @@ function reveal(){
    footer,
     header
    `);
-  
+
   ScrollReveal({
     origin: "left",
     distance: "3rem",
@@ -92,4 +93,3 @@ function reveal(){
    .content
    `);
 }
-
